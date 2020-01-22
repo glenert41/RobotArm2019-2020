@@ -26,6 +26,7 @@ shaftServo = servo.Servo(pwmShaftServo)
 
 shaftPot = AnalogIn(board.A1)
 
+//testing again
 
 
 while True:
