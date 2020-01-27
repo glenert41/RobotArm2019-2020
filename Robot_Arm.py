@@ -1,7 +1,5 @@
 # CircuitPython IO demo #1 - General Purpose I/O
 import board
-import neopixel
-import math
 import time
 import digitalio
 import analogio
@@ -9,10 +7,11 @@ from analogio import AnalogIn
 import pulseio
 from adafruit_motor import servo
 from adafruit_motor import Motor
-import touchio
+
 import adafruit_bus_device
 
-#import simpleio  #pylint: disable-msg=import-error
+import simpleio   
+#pylint: disable-msg=import-error
 
 
 # Shaft Servo
@@ -50,15 +49,9 @@ while True:
  
     mappedPitchPot = pitchServoPot.value/2**16*180
     pitchServo.angle = int(mappedPitchPot)
-   # print(int(mappedPitchPot))
 
-   
-
-   
-    
-    
     pwmMotor.duty_cycle = motorPot.value
-    print(motorPot.value)
+ 
     
 
 
