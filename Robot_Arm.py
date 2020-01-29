@@ -41,6 +41,9 @@ my_Motor = servo.ContinuousServo(pwmMotor)
 
 motorPot = AnalogIn(board.A5)
 
+
+
+
 while True:
  
     mappedShaftPot = shaftPot.value/2**16*180 # simpleio.map_range(shaftPot,0,2^16,0,180)
@@ -50,8 +53,30 @@ while True:
     mappedPitchPot = pitchServoPot.value/2**16*180
     pitchServo.angle = int(mappedPitchPot)
 
-    pwmMotor.duty_cycle = motorPot.value
- 
+    #mappedMotorPot = simpleio.map_range(int(motorPot.value),200,1600,0,2**16-1)
+    #pwmMotor.duty_cycle = int(mappedMotorPot)
+    #pwmMotor.duty_cycle = 60000
+    #print(int(mappedMotorPot))
+    #print(motorPot.value)
+
+    
+
+    MotorPotOut = motorPot.value
+    print(MotorPotOut)
+
+
+    #print(secureMotorPot)
+    
+
+
+
+
+    pwmMotor.duty_cycle = int(MotorPotOut)
+    
+    if(MotorPotOut < 2000):
+        pwmMotor.duty_cycle = 0
+    if(MotorPotOut > 60000):
+        pwmMotor.duty_cycle = 2**16-1
     
 
 
