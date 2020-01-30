@@ -1,5 +1,6 @@
-# CircuitPython IO demo #1 - General Purpose I/O
+
 import board
+import math 
 import time
 import digitalio
 import analogio
@@ -43,31 +44,38 @@ motorPot = AnalogIn(board.A5)
 
 
 
+photoPin = digitalio.DigitalInOut(board.D8)
+photoPin.direction = digitalio.Direction.INPUT
+photoPin.pull = digitalio.Pull.UP
+
+interrupts = -1         
+lread = True
+fread = True 
 
 while True:
  
-    mappedShaftPot = shaftPot.value/2**16*180 # simpleio.map_range(shaftPot,0,2^16,0,180)
+    mappedShaftPot = int(shaftPot.value/2**16*180) # simpleio.map_range(shaftPot,0,2^16,0,180)
     shaftServo.angle = int(mappedShaftPot)
     #print(int(mappedShaftPot))
  
-    mappedPitchPot = pitchServoPot.value/2**16*180
+    mappedPitchPot = int(pitchServoPot.value/2**16*180)
     pitchServo.angle = int(mappedPitchPot)
 
-    #mappedMotorPot = simpleio.map_range(int(motorPot.value),200,1600,0,2**16-1)
-    #pwmMotor.duty_cycle = int(mappedMotorPot)
-    #pwmMotor.duty_cycle = 60000
-    #print(int(mappedMotorPot))
-    #print(motorPot.value)
-
-    
+ 
 
     MotorPotOut = motorPot.value
-    print(MotorPotOut)
+    #print(MotorPotOut)
 
 
-    #print(secureMotorPot)
-    
+    if photoPin.value:
+        lread = True   #if interrupted, turn lread to true
 
+    elif fread == lread: #if the photointerrupter is interrupted, then uniterrupted,
+                                #count the interrupter and add 1 to the counter variable
+        interrupts +=1   
+        lread = not lread
+
+    print(interrupts)
 
 
 
