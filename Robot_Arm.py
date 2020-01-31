@@ -6,12 +6,12 @@ import digitalio
 import analogio
 from analogio import AnalogIn
 import pulseio
-from adafruit_motor import servo
-from adafruit_motor import Motor
+from adafruit_motor import servo, Motor
+#from adafruit_motor import Motor
 
 import adafruit_bus_device
 
-import simpleio   
+#import simpleio   
 #pylint: disable-msg=import-error
 
 
@@ -22,7 +22,7 @@ import simpleio
 
 #Photointerrupter
 
-pwmShaftServo = pulseio.PWMOut(board.A4, duty_cycle=2 ** 15, frequency=50)
+pwmShaftServo = pulseio.PWMOut(board.D9, duty_cycle=2 ** 15, frequency=50)
 shaftServo = servo.Servo(pwmShaftServo)
 
 shaftPot = AnalogIn(board.A1)
@@ -52,8 +52,16 @@ interrupts = -1
 lread = True
 fread = True 
 
+
+from lcd.lcd import LCD
+from lcd.i2c_pcf8574_interface import I2CPCF8574Interface #importing and prepping LCD library
+
+from lcd.lcd import CursorMode
+
+lcd = LCD(I2CPCF8574Interface(0x3f), num_rows=2, num_cols=16)
+
 while True:
- 
+    
     mappedShaftPot = int(shaftPot.value/2**16*180) # simpleio.map_range(shaftPot,0,2^16,0,180)
     shaftServo.angle = int(mappedShaftPot)
     #print(int(mappedShaftPot))
@@ -74,8 +82,7 @@ while True:
                                 #count the interrupter and add 1 to the counter variable
         interrupts +=1   
         lread = not lread
-
-    print(interrupts)
+    #print(interrupts)
 
 
 
@@ -87,6 +94,10 @@ while True:
         pwmMotor.duty_cycle = 2**16-1
     
 
+    
+    lcd.clear()
+    lcd.set_cursor_pos(0,0)         #clears and resets LCD
+    lcd.print("Presses: ") 
 
     time.sleep(.1)
     
