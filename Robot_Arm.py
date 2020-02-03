@@ -1,16 +1,23 @@
-
+import gc
 import board
-import math 
+import math
+gc.collect()
+
 import time
 import digitalio
 import analogio
+gc.collect()
+
 from analogio import AnalogIn
 import pulseio
+gc.collect()
+
 from adafruit_motor import servo, Motor
 #from adafruit_motor import Motor
 
 import adafruit_bus_device
 
+gc.collect()
 #import simpleio   
 #pylint: disable-msg=import-error
 
@@ -58,10 +65,13 @@ from lcd.i2c_pcf8574_interface import I2CPCF8574Interface #importing and preppin
 
 from lcd.lcd import CursorMode
 
-lcd = LCD(I2CPCF8574Interface(0x3f), num_rows=2, num_cols=16)
+lcd = LCD(I2CPCF8574Interface(0x3F), num_rows=2, num_cols=16)
+
+initial = time.monotonic()
 
 while True:
-    
+    lcd.clear()
+
     mappedShaftPot = int(shaftPot.value/2**16*180) # simpleio.map_range(shaftPot,0,2^16,0,180)
     shaftServo.angle = int(mappedShaftPot)
     #print(int(mappedShaftPot))
@@ -94,12 +104,21 @@ while True:
         pwmMotor.duty_cycle = 2**16-1
     
 
+    now = time.monotonic() 
+    if now - initial == 2:
+        lcd.set_cursor_pos(0,0)         #clears and resets LCD
+        lcd.print(str(motorPot.value)) 
+        print("working")
+        initial = time.monotonic()
     
-    lcd.clear()
-    lcd.set_cursor_pos(0,0)         #clears and resets LCD
-    lcd.print("Presses: ") 
 
-    time.sleep(.1)
+
+    '''
+    lcd.set_cursor_pos(1,0)
+    lcd.print("CAH! VROOM VROOM")
+    print("Pressing")
+    '''
+    time.sleep(.05)
     
 
    
