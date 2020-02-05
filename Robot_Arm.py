@@ -18,7 +18,7 @@ from adafruit_motor import servo, Motor
 import adafruit_bus_device
 
 gc.collect()
-#import simpleio   
+import simpleio   
 #pylint: disable-msg=import-error
 
 
@@ -70,7 +70,8 @@ lcd = LCD(I2CPCF8574Interface(0x3F), num_rows=2, num_cols=16)
 initial = time.monotonic()
 
 while True:
-    lcd.clear()
+
+    now = time.monotonic() 
 
     mappedShaftPot = int(shaftPot.value/2**16*180) # simpleio.map_range(shaftPot,0,2^16,0,180)
     shaftServo.angle = int(mappedShaftPot)
@@ -79,7 +80,6 @@ while True:
     mappedPitchPot = int(pitchServoPot.value/2**16*180)
     pitchServo.angle = int(mappedPitchPot)
 
- 
 
     MotorPotOut = motorPot.value
     #print(MotorPotOut)
@@ -87,38 +87,47 @@ while True:
 
     if photoPin.value:
         lread = True   #if interrupted, turn lread to true
-
-    elif fread == lread: #if the photointerrupter is interrupted, then uniterrupted,
-                                #count the interrupter and add 1 to the counter variable
+    elif fread == lread: #if the photointerrupter is interrupted, then uniterrupted,                               #count the interrupter and add 1 to the counter variable
         interrupts +=1   
         lread = not lread
     #print(interrupts)
-
-
-
-    pwmMotor.duty_cycle = int(MotorPotOut)
-    
-    if(MotorPotOut < 2000):
-        pwmMotor.duty_cycle = 0
-    if(MotorPotOut > 60000):
-        pwmMotor.duty_cycle = 2**16-1
-    
-
-    now = time.monotonic() 
-    if now - initial == 2:
-        lcd.set_cursor_pos(0,0)         #clears and resets LCD
-        lcd.print(str(motorPot.value)) 
-        print("working")
-        initial = time.monotonic()
-    
-
-
-    '''
     lcd.set_cursor_pos(1,0)
-    lcd.print("CAH! VROOM VROOM")
-    print("Pressing")
-    '''
+    lcd.print(("Interrupts: ") + str(interrupts))
+
+
+
+    
+    
+    if(MotorPotOut <= 5000):
+        pwmMotor.duty_cycle = 0
+    elif(MotorPotOut >= 60000):
+        pwmMotor.duty_cycle = 2**16-1
+    else:
+        pwmMotor.duty_cycle = int(MotorPotOut)
+    
+    displayMotorPotOut = int(simpleio.map_range(MotorPotOut,0,2**16-1,0,100))
+    
+    if now - initial >= 1:
+        lcd.clear()
+        lcd.set_cursor_pos(0,0)         #clears and resets LCD
+        
+        if(MotorPotOut <= 5000):
+            lcd.print(str("Speed: 0"))
+        elif(MotorPotOut >= 60000):
+            lcd.print("Speed: 100")
+        else:
+            lcd.print(("Speed: ") + (str(displayMotorPotOut)))
+
+        initial = time.monotonic()
+        
+        
+    
+    
+
+
     time.sleep(.05)
     
 
    
+
+
