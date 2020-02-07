@@ -73,9 +73,11 @@ while True:
     
     mappedShaftPot = int(shaftPot.value/2**16*180)
     shaftServo.angle = int(mappedShaftPot)
- 
+    #print(str("Shaft Servo: ") + (str(shaftServo.angle)))
+
     mappedPitchPot = int(pitchServoPot.value/2**16*180)
     pitchServo.angle = int(mappedPitchPot)
+    #print(str("Pitch Servo: ") + (str(pitchServo.angle)))
 
     MotorPotOut = motorPot.value
 
