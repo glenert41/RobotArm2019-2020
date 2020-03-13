@@ -10,7 +10,7 @@ These young men had dedicated a lot of time to it!
 
 Our inspiration for this project came from these toys. 
 
-<img src="media/SpinnyShootaPic.jfif" width="256">
+<img src="media/SpinnyShootaPic.jfif" width="1028">
 
 
 
