@@ -6,12 +6,12 @@ Everyone Come to the Buford Stem Night Please - Jude Emile Fairchild
 ## Planning
 
 
-##Code
+## Code
 
-##Solidworks
+## Solidworks
 
-##Images
+## Images
 
-##Reflections
+## Reflections
 
 
