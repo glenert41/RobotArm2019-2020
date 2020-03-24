@@ -21,6 +21,7 @@ Our inspiration for this project came from these toys.
 ## Code
 
 ## Solidworks
+This section contains pictures of our last versions of our SolidWorks assemblies and parts. A large quantity of these are not complete, for obvious reasons. 
 
 ## Images
 
