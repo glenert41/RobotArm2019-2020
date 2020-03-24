@@ -20,6 +20,8 @@ Our inspiration for this project came from these toys.
 
 ## Code
 
+The Code is under this GitHub Link: 
+
 ## Solidworks
 This section contains pictures of our last versions of our SolidWorks assemblies and parts. A large quantity of these are not complete, for obvious reasons. 
 
