@@ -18,6 +18,11 @@ Our inspiration for this project came from these toys.
 | ------------- | ------------- |
 | Week 1 : January 13 - 17   | Finish basic planning Get Github repo set up|
 |Week 2 : January 22 - 24    | Start designing the launcher mechanism in Solidworks and Write code for potentiometers and servos|
+|Week 3 : January 27 - 31 | Finish the launcher mechanism, start designing the z-axis servo mechanism and x/y servo system. Also Write code to control DC motor/launcher mechanism|
+| Week 4 : February 3 - 7 | Once launcher mechanism is done, print out all the pieces and start testing Display info on LCD according to pot values|
+| Week 6 : February 17 - 21 | Start work on servo arm in Solidworks and Continue working on code|
+
+
 
 ## Code
 
