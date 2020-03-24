@@ -12,6 +12,12 @@ Our inspiration for this project came from these toys.
 
 ## Planning
 
+### Items Needed
+### Schedule
+| Date          | Goals         |
+| ------------- | ------------- |
+| Week 1 : January 13 - 17   | Finish basic planning Get Github repo set up|
+|Week 2 : January 22 - 24    | Start designing the launcher mechanism in Solidworks and Write code for potentiometers and servos|
 
 ## Code
 
