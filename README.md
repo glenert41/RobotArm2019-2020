@@ -21,6 +21,13 @@ Our inspiration for this project came from these toys.
 |Week 3 : January 27 - 31 | Finish the launcher mechanism, start designing the z-axis servo mechanism and x/y servo system. Also Write code to control DC motor/launcher mechanism|
 | Week 4 : February 3 - 7 | Once launcher mechanism is done, print out all the pieces and start testing Display info on LCD according to pot values|
 | Week 6 : February 17 - 21 | Start work on servo arm in Solidworks and Continue working on code|
+| Week 7 : February 24 - 28 | Finish servo arm in Solidworks, start working on base of arm. Also, Finish and polish code |
+| Week 8 : March 2 - 6 | Finish any last Solidworks parts & assemblies |
+| Week 9 : March 9 - 13 | Print & cut out all Solidworks pieces and assemble |
+| Week 10 : March 16 - 20 | Make adjustments to any faulty pieces and redo|
+| Week 11 : March 23 - 27 | Have full robot arm and launcher mechanism working with code |
+| Week 12 : March 30 - April 3 | Make any final adjustments |
+
 
 
 
