@@ -54,14 +54,15 @@ https://github.com/glenert41/RobotArm2019-2020/blob/master/Robot_Arm.py
 ## Solidworks
 This section contains pictures of our last versions of our SolidWorks assemblies and parts. A large quantity of these are not complete, for obvious reasons. 
 
-<img align="left" src="media/FanAssembly.JPG" width="256">
-<img align="center" alt="dedsdmsms" src="media/FanAssembly2.JPG" width="256">
+<img align="left" src="media/FanAssembly.JPG" width="400">
+<img align="center" alt="dedsdmsms" src="media/FanAssembly2.JPG" width="400">
 
-The pictures above and below are pictures of the fan/propeller assembly. This assembly would have sat on the end of the robot arm, which would have given it the freedom to launch the propeller in any direction. The motor axle connects to a 3d-printed axle, which extends through the box and has the propeller lock mechanism at the end.
+The pictures above and below are pictures of the fan/propeller assembly. This assembly would have sat on the end of the robot arm, which would have given it the freedom to launch the propeller in any direction. The motor axle first connects to a laser cut wheel that rotates through the photointerrupter. This would enable us to calculate the RPM of the propeller and motor. Then, the axle connects to a seperate 3d-printed axle which extends through the box and has the propeller lock mechanism at the end. In between this 3d-printed axle and the acrylic box is a metal bearing (highlighted blue in the bottom right picture) which would ensure that there is little friction. 
 
-<img align="right" src="media/FanAssembly3.JPG" width="256">
-<img align="right" src="media/FanAssembly4.JPG" width="256">
+<img align="left" src="media/FanAssembly3.JPG" width="400">
+<img align="center" src="media/FanAssembly4.JPG" width="400">
 
+eiamdismiaewdasdeads
 
 
 
