@@ -7,12 +7,28 @@ Our inspiration for this project came from these toys.
 
 <img src="media/SpinnyShootaPic.jfif" width="256">
 
-
-
+Here's a link to part of a video which shows the spinny motion that we are trying to replicate. It shows the lock mechanism for the propeller along with how it will launch. https://youtu.be/Gp0Zi7U--30?t=315 
 
 ## Planning
 
 ### Items Needed
+
+| Item          | Quantity      |
+| ------------- |:-------------:|
+| Metro board | 1 |
+| Breadboard | 1 | 
+| Potentiometers | 3 |
+| LCD screen | 1 |
+| LCD backpack | 1 |
+| Large button | 1 |
+| Photointerrupter | 1 |
+| Large motor | 1 |
+| Large black servo | 1 |
+| Small blue servos | 2 |
+| Assorted #4-40 screws | n/a |
+| Assorted wires | n/a |
+
+
 ### Schedule
 | Date          | Goals         |
 | ------------- | ------------- |
@@ -29,8 +45,6 @@ Our inspiration for this project came from these toys.
 | Week 12 : March 30 - April 3 | Make any final adjustments |
 
 
-
-
 ## Code
 
 The Code is under this GitHub Link: 
@@ -41,14 +55,15 @@ https://github.com/glenert41/RobotArm2019-2020/blob/master/Robot_Arm.py
 This section contains pictures of our last versions of our SolidWorks assemblies and parts. A large quantity of these are not complete, for obvious reasons. 
 
 <img align="left" src="media/FanAssembly.JPG" width="256">
-<img align="center" src="media/FanAssembly2.JPG" width="256">
+<img align="center" alt="dedsdmsms" src="media/FanAssembly2.JPG" width="256">
+
+The pictures above and below are pictures of the fan/propeller assembly. This assembly would have sat on the end of the robot arm, which would have given it the freedom to launch the propeller in any direction. The motor axle connects to a 3d-printed axle, which extends through the box and has the propeller lock mechanism at the end.
+
 <img align="right" src="media/FanAssembly3.JPG" width="256">
+<img align="right" src="media/FanAssembly4.JPG" width="256">
 
 
-<img src="media/FanAssembl4.JPG" width="256">
-<img src="media/FanConnector.JPG" width="256">
-<img src="media/FanConnector2.JPG" width="256">
-<img src="media/FanConnector3.JPG" width="256">
+
 
 ## Images
 
